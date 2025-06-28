@@ -4,7 +4,7 @@ import { LayoutDashboard, Folder } from 'lucide-react';
 
 const Sidebar = () => {
   const location = useLocation();
-  const [isOpen, setIsOpen] = useState(false); // Start closed on mobile
+  const [isOpen, setIsOpen] = useState(false);
 
   const navLinks = [
     { to: '/', label: 'Dashboard', icon: <LayoutDashboard className="w-5 h-5" /> },
@@ -13,26 +13,32 @@ const Sidebar = () => {
 
   return (
     <>
-      {/* Mobile toggle button */}
-      <div className="md:hidden bg-white text-black p-4 flex justify-between items-center">
-        <span className="text-xl font-bold">MyApp</span>
-        <button onClick={() => setIsOpen(!isOpen)} className="text-white text-2xl">
+      {/* Mobile Header */}
+      <div className="md:hidden bg-white text-black p-2 flex justify-between place-items-start shadow">
+         
+        <button onClick={() => setIsOpen(true)} className="text-black text-2xl ">
           ☰
         </button>
       </div>
 
+      {/* Mobile Overlay */}
+      {isOpen && (
+        <div
+          className="fixed inset-0 bg-black bg-opacity-50 z-40 md:hidden"
+          onClick={() => setIsOpen(false)}
+        ></div>
+      )}
+
       {/* Sidebar */}
       <aside
-        className={`
-          fixed md:static z-50 top-0 left-0 h-full bg-white text-black transition-all duration-300 ease-in-out
-          ${isOpen ? 'w-64' : 'w-0 md:w-64'}
-          overflow-hidden md:block
-        `}
+        className={`fixed top-0 left-0 z-50 h-full bg-white text-black transition-transform duration-300 ease-in-out
+          ${isOpen ? 'translate-x-0' : '-translate-x-full'} 
+          md:translate-x-0 md:static md:block w-64 shadow-md`}
       >
-        {/* Logo and toggle (for desktop) */}
-        <div className="p-4 flex items-center justify-between border-b border-gray-800">
+        {/* Sidebar Header */}
+        <div className="p-4 flex items-center justify-between border-b border-gray-200 md:border-none">
           <span className="text-xl font-bold">MyApp</span>
-          <button onClick={() => setIsOpen(!isOpen)} className="text-white md:hidden">
+          <button onClick={() => setIsOpen(false)} className="text-black text-xl md:hidden">
             ✕
           </button>
         </div>
@@ -43,9 +49,11 @@ const Sidebar = () => {
             <Link
               key={link.to}
               to={link.to}
-              onClick={() => setIsOpen(false)} // Close on mobile link click
-              className={`flex items-center space-x-3 px-3 py-2 rounded hover:bg-gray-800 transition ${
-                location.pathname === link.to ? 'bg-white' : ''
+              onClick={() => setIsOpen(false)}
+              className={`flex items-center space-x-3 px-3 py-2 rounded transition ${
+                location.pathname === link.to
+                  ? 'bg-gray-200 text-black'
+                  : 'hover:bg-gray-100'
               }`}
             >
               {link.icon}
