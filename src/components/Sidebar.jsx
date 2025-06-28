@@ -34,7 +34,7 @@ const Sidebar = () => {
         className={`fixed top-0 left-0 z-50   bg-white text-black transition-transform duration-300 ease-in-out
           ${isOpen ? 'translate-x-0' : '-translate-x-full'} 
           md:translate-x-0 md:static md:block w-64 shadow-md`}
-          style={{ width: '270.65px' , height: '472px' }}
+          style={{ width: '270.65px'  }}
       >
         {/* Sidebar Header */}
         <div className="p-4 flex items-center justify-between border-b border-gray-200 md:border-none">
