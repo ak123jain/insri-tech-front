@@ -1,29 +1,17 @@
- import React from 'react'
+ 
+import React from 'react';
+import { Menu } from 'lucide-react';
 
-const Navbar = () => {
+const Navbar = ({ onMenuClick }) => {
   return (
-    <nav className="bg-white text-black h-2 p-4">
-      <div className="container mx-auto flex items-center justify-between flex-wrap">
-        <div className="text-lg font-semibold">Navbar</div>
-        <div className="w-full block flex-grow md:flex md:items-center md:w-auto">
-          <div className="text-sm md:flex-grow">
-            <a
-              href="#dashboard"
-              className="block mt-4 md:inline-block md:mt-0 text-white hover:text-blue-300 mr-6"
-            >
-              Dashboard
-            </a>
-            <a
-              href="#projects"
-              className="block mt-4 md:inline-block md:mt-0 text-white hover:text-blue-300"
-            >
-              Projects
-            </a>
-          </div>
-        </div>
-      </div>
-    </nav>
-  )
-}
+    <div className="bg-white p-4 shadow flex justify-between items-center md:hidden">
+      <button onClick={onMenuClick} className="text-black text-2xl">
+        <Menu className="w-6 h-6" />
+      </button>
+      <span className="text-xl font-semibold">MyApp</span>
+       
+    </div>
+  );
+};
 
-export default Navbar
+export default Navbar;
