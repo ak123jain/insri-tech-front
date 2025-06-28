@@ -2,7 +2,7 @@
 
 const Navbar = () => {
   return (
-    <nav className="bg-gray-800 text-white p-4">
+    <nav className="bg-white text-black p-4">
       <div className="container mx-auto flex items-center justify-between flex-wrap">
         <div className="text-lg font-semibold">Navbar</div>
         <div className="w-full block flex-grow md:flex md:items-center md:w-auto">

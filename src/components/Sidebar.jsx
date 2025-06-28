@@ -14,7 +14,7 @@ const Sidebar = () => {
   return (
     <>
       {/* Mobile toggle button */}
-      <div className="md:hidden bg-gray-900 text-white p-4 flex justify-between items-center">
+      <div className="md:hidden bg-white text-black p-4 flex justify-between items-center">
         <span className="text-xl font-bold">MyApp</span>
         <button onClick={() => setIsOpen(!isOpen)} className="text-white text-2xl">
           ☰
@@ -24,7 +24,7 @@ const Sidebar = () => {
       {/* Sidebar */}
       <aside
         className={`
-          fixed md:static z-50 top-0 left-0 h-full bg-gray-900 text-white transition-all duration-300 ease-in-out
+          fixed md:static z-50 top-0 left-0 h-full bg-white text-black transition-all duration-300 ease-in-out
           ${isOpen ? 'w-64' : 'w-0 md:w-64'}
           overflow-hidden md:block
         `}
@@ -45,7 +45,7 @@ const Sidebar = () => {
               to={link.to}
               onClick={() => setIsOpen(false)} // Close on mobile link click
               className={`flex items-center space-x-3 px-3 py-2 rounded hover:bg-gray-800 transition ${
-                location.pathname === link.to ? 'bg-gray-800' : ''
+                location.pathname === link.to ? 'bg-white' : ''
               }`}
             >
               {link.icon}
