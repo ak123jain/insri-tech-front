@@ -1,23 +1,26 @@
- // Layout.jsx
-import React, { useState } from 'react';
-import Sidebar from './Sidebar';
-import Navbar from './Navbar';
-import { Outlet } from 'react-router-dom'; // ✅ Import this
+// Layout.jsx
+import React, { useState } from "react";
+import Sidebar from "./Sidebar";
+import Navbar from "./Navbar";
+import { Outlet } from "react-router-dom"; // ✅ Import this
 
 const Layout = () => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 
   return (
-    <div className="flex">
-      <Sidebar isOpen={isSidebarOpen} setIsOpen={setIsSidebarOpen} />
-      <div className="flex-1 min-h-screen bg-gray-100">
-        <Navbar onMenuClick={() => setIsSidebarOpen(true)} />
-        
-        {/* ✅ This is where the pages like Dashboard & Projects will render */}
-        <div className="p-4">
-          <Outlet />
+    <div className="flex  h-screen">
+      <div className="top-0 bottom-0 left-0 z-50  fixed ">
+        <Sidebar isOpen={isSidebarOpen} setIsOpen={setIsSidebarOpen} />
+      </div>
+      <div className="flex-1 min-h-screen bg-white ml-64">
+        <div className="sticky top-4 z-50">
+          <Navbar onMenuClick={() => setIsSidebarOpen(true)} />
         </div>
 
+        {/* ✅ This is where the pages like Dashboard & Projects will render */}
+        <div className="p-4 overflow-y-auto">
+          <Outlet />
+        </div>
       </div>
     </div>
   );
@@ -25,4 +28,6 @@ const Layout = () => {
 
 export default Layout;
 
-{/* <Outlet /> is a special component provided by React Router (v6+). It acts as a placeholder for rendering the component of a nested route. */}
+{
+  /* <Outlet /> is a special component provided by React Router (v6+). It acts as a placeholder for rendering the component of a nested route. */
+}

@@ -45,7 +45,7 @@ const emailData = [
   },
 ];
 
-const Project = () => {
+const Inbox = () => {
   return (
     <div className="flex justify-center items-center bg-gray-100 min-h-screen">
       {/* 🔹 LEFT PANEL */}
@@ -166,4 +166,4 @@ const Project = () => {
   );
 };
 
-export default Project;
+export default Inbox;

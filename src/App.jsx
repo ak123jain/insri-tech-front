@@ -36,6 +36,7 @@ import { Routes, Route } from 'react-router-dom';
 import Layout from './components/Layout';
 import Project from './Pages/Project';
 import Dashboard from './Pages/Dashboard';
+import Inbox from './Pages/Inbox';
  
  
 
@@ -46,6 +47,9 @@ const App = () => {
 
         <Route path="/projects" element={<Project />} />
         <Route path="/" element={<Dashboard />} />
+        <Route path="/inbox" element={<Inbox />} />
+        
+        
       </Route>
     </Routes>
   );
