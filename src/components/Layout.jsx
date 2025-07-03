@@ -13,12 +13,13 @@ const Layout = () => {
         <Sidebar isOpen={isSidebarOpen} setIsOpen={setIsSidebarOpen} />
       </div>
       <div className="flex-1 min-h-screen bg-white ml-64">
-        <div className="sticky top-4 z-50">
+
+        <div className="fixed top-0 ml-4 z-50 px-16 bg-white ">
           <Navbar onMenuClick={() => setIsSidebarOpen(true)} />
         </div>
 
         {/* ✅ This is where the pages like Dashboard & Projects will render */}
-        <div className="p-4 overflow-y-auto">
+        <div className="p-4 mt-32  overflow-y-auto">
           <Outlet />
         </div>
       </div>
