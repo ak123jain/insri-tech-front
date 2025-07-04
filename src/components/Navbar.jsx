@@ -3,7 +3,7 @@ import { Menu } from 'lucide-react';
 
 const Navbar = ({ onMenuClick }) => {
   return (
-    <div className="bg-gray-200 sticky h-[79px] px-4 w-[1250px] ml-2 border-b shadow-sm flex justify-between items-center rounded-full mt-4">
+    <div className="bg-gray-200 sticky h-[79px] px-4 w-full ml-2 border-b shadow-sm flex justify-between items-center rounded-full mt-4">
       {/* Left: Menu Icon — hide on desktop */}
       <button
         onClick={onMenuClick}
