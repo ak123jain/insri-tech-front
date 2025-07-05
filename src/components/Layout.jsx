@@ -64,7 +64,7 @@ const Layout = () => {
         </div>
 
         {/* Content */}
-        <div className=" overflow-y-auto p-4 bg-white">
+        <div className=" overflow-y-auto p-4  ">
           <Outlet />
         </div>
 

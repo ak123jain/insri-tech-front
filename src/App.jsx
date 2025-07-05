@@ -37,6 +37,7 @@ import Layout from './components/Layout';
 import Project from './Pages/Project';
 import Dashboard from './Pages/Dashboard';
 import Inbox from './Pages/Inbox';
+import Message from './Pages/Message';
  
  
 
@@ -44,10 +45,10 @@ const App = () => {
   return (
     <Routes>
       <Route path="/" element={<Layout />}>
-
         <Route path="/projects" element={<Project />} />
         <Route path="/" element={<Dashboard />} />
         <Route path="/inbox" element={<Inbox />} />
+        <Route path="/chat"  element={<Message />} />
         
         
       </Route>
